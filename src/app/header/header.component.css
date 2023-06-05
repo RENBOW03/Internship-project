@@ -1,0 +1,12 @@
+.menu li{
+    display: inline-block;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.menu {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 1px 1px 1px;
+}
