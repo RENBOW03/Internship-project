@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -17,10 +17,15 @@ import { MemberComponent } from './member/member.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { Member2Component } from './member2/member2.component';
+import { Routes, RouterModule } from '@angular/router';
 
-
-
-registerLocaleData(en);
+const appRoutes: Routes = [
+  { path: '', component: AppComponent},
+  { path: 'login', component: LoginCardComponent},
+  { path: 'member1', component: MemberComponent},
+  { path: 'member2', component: Member2Component}
+];
 
 @NgModule({
   declarations: [
@@ -28,7 +33,8 @@ registerLocaleData(en);
     LoginCardComponent,
     MemberComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    Member2Component
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,8 @@ registerLocaleData(en);
     NzButtonModule,
     NzCardModule,
     NzInputModule,
-    NzLayoutModule
+    NzLayoutModule,
+    RouterModule.forRoot(appRoutes)
 
 
     
